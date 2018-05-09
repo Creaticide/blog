@@ -1,0 +1,16 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+<main>
+	{% for post in post_list %}
+		<article class="blogArticle">
+			<a class="blockLink" href="/detail">
+				<h3>{{ post.title }}</h2>
+				<p>{{ post.text|truncatewords:50 }}</p>
+			</a>
+			{% if not forloop.last %}
+				<hr>
+			{% endif %}
+		</article>
+	{% endfor %}
+</main>
+{% endblock %}
