@@ -3,8 +3,8 @@
 <main>
 	{% for post in post_list %}
 		<article class="blogArticle">
-			<a class="blockLink" href="/detail">
-				<h3>{{ post.title }}</h2>
+			<a class="blockLink" href="{% url 'post_detail' pk=post.pk %}">
+				<h3>{{ post.title }}</h3>
 				<p>{{ post.text|truncatewords:50 }}</p>
 			</a>
 			{% if not forloop.last %}

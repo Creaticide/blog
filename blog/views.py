@@ -12,9 +12,6 @@ class IndexView(generic.ListView):
     def get_queryset(self):
         return Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
 
-class PostDetailView(generic.ListView):
+class PostDetailView(generic.DetailView):
     template_name = 'blog/post_detail.html'
-    context_object_name = 'post_list'
-    
-    def get_queryset(self):
-        return Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    model = Post
