@@ -76,7 +76,7 @@ WSGI_APPLICATION = 'creaticide.wsgi.application'
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
 DATABASES = {
-    settings_secret.MARIADB
+    'default': settings_secret.MARIADB
 }
 
 
