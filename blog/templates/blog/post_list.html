@@ -2,8 +2,8 @@
 {% block content %}
 <main>
 	{% for post in post_list %}
-		<article class="blogArticle">
-			<a class="blockLink" href="{% url 'post_detail' pk=post.pk %}">
+		<article class="blog-article">
+			<a class="block-link" href="{% url 'post_detail' pk=post.pk %}">
 				<h3>{{ post.title }}</h3>
 				<p>{{ post.text|truncatewords:50 }}</p>
 			</a>

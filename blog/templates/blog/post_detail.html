@@ -1,10 +1,15 @@
 {% extends 'blog/base.html' %}
 {% block content %}
 <main>
-	<article class="blogArticle">
+	<article class="blog-article">
 		<h2>{{ post.title }}</h2>
 		<p><strong>Category: </strong>{{ post.category }}</p>
-		<p><strong>Tags: </strong>{% for tag in post.tags.all %}{{ tag.name }}{% endfor %}</p>
+		<p>
+			<strong>Tags: </strong>
+				{% for tag in post.tags.all %}
+					<span class="post-tag">{{ tag.name }}</span>
+				{% endfor %}
+			</p>
 		<p>{{ post.text }}</p>
 	</article>
 </main>
